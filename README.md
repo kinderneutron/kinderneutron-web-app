@@ -1,5 +1,5 @@
 # Kinderneutron Django Project
-
+[![Django CI](https://github.com/kinderneutron/kinderneutron-web-app/actions/workflows/django.yml/badge.svg)](https://github.com/kinderneutron/kinderneutron-web-app/actions/workflows/django.yml)
 ## Overview
 
 Kinderneutron Django Project is a web application developed using Django, designed to display videos captured from CCTV cameras and detect persons using deep learning algorithms. The project also includes functionality to control lights based on person detection status. This repository contains the codebase for the Django application and integrates with other components of the Kinderneutron project.
