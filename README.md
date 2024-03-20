@@ -12,3 +12,34 @@ This REPO Comes With PreRequirties Package.[Click Here](https://github.com/kinde
 2. Start Working Here Itself
 
    Update This Readme If you Feel Like👍🏻
+
+## Features
+
+- **Automated Setup**: Easily set up local development environments with Docker Compose images and required packages.
+- **Version Control**: Ensure consistency across development environments by specifying version numbers for images and packages.
+- **Architecture Support**: Compatible with x86, x64, and other architectures for flexibility in environment setup.
+- **Efficient Workflow**: Speed up the development workflow by eliminating manual setup tasks and reducing setup time.
+
+## Installation
+
+### Prerequisites
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your system.
+- Docker Compose configuration files for your project.
+### Installation Steps
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/kinderneutron-env-init.git 
+2.Go to The Directory kinderneutron-env-init
+<br> (a).For Linux Users:
+ ```bash
+   sh autorun.sh
+```
+(b) For Windows Users:
+```
+autorun.bat
+```
+
+## Usage
+After installation, Your Environment is Set with All Packages Necessery for Kinderneutron Project
