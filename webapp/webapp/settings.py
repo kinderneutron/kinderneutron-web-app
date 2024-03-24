@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'webapp.wsgi.application'
+
 
 
 # Database
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'webapp.wsgi.application'
 DATABASES = {
       'default': {
           'ENGINE': 'django.db.backends.postgresql',
-          'NAME': 'cases_db',
+          'NAME': 'kinderneutron_db',
           'USER': 'postgres',
           'PASSWORD': '123456',
           'HOST': 'psql-db',
