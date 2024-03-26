@@ -15,7 +15,7 @@ Kinderneutron Env Init is a utility tool designed to streamline the setup proces
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your system.
 - Docker Compose configuration files for your project.
-### Installation Steps
+## Installation Steps
 
 1. Clone the repository:
    ```bash
@@ -29,7 +29,8 @@ Kinderneutron Env Init is a utility tool designed to streamline the setup proces
 ```
 autorun.bat
 ```
-**Note If You Are Setting Things Up For First Time in You Pc then Setup the DB. Just Execute the Script
+## Database Setup (⚠️First-TIme Only)
+If You Are Setting Things Up For First Time in You Pc then Setup the DB. Just Execute the Script
 <br> (a).For Linux Users:
  ```bash
    sh Patches/SQL/setup_fresh_db.sh
