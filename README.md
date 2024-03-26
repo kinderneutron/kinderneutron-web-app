@@ -30,7 +30,7 @@ Kinderneutron Env Init is a utility tool designed to streamline the setup proces
 autorun.bat
 ```
 ## Database Setup (⚠️First-TIme Only)
-If You Are Setting Things Up For First Time in You Pc then Setup the DB. Just Execute the Script
+<b>If You Are Setting Things Up For First Time in Local System, then Setup the DB. Just Execute the Script</b>
 <br> (a).For Linux Users:
  ```bash
    sh Patches/SQL/setup_fresh_db.sh
