@@ -27,8 +27,7 @@
       - '5446:5432'
     volumes:
       - db:/var/lib/postgresql/data
-      - ./Patches/SQL/create-db.sql:/docker-entrypoint-initdb.d/create-db.sql:ro
-      - ./setup_fresh_db.sh:/setup_fresh_db.sh
+      - ./Patches/SQL/create-db.sql:/docker-entrypoint-initdb.d/create-db.sql
   volumes:
     db:
       driver: local 
