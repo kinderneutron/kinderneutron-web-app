@@ -1,3 +1,4 @@
+BEGIN;
 INSERT INTO "user" (username, email, password)
 VALUES
     ('john_doe', 'john.doe@example.com', 'password123'),
@@ -21,4 +22,5 @@ VALUES
     (1, 'Runtime Error', 'Division by zero'),
     (2, 'Syntax Error', 'Missing semicolon'),
     (3, 'Type Error', 'Unexpected type conversion');
+END;
 
