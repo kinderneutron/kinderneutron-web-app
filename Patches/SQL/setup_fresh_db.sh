@@ -3,23 +3,24 @@
 # Turn off echoing commands
 set +x
 
-# Get the ID of the container named "psql-db" and save it to container_id.txt
-docker ps --filter name=psql-db --format "{{.ID}}" > container_id.txt
+# Get the ID of the container named "psql-db"
+container_id=$(docker ps -qf "name=psql-db")
 
-# Check if container_id.txt exists and is not empty
-if [ -s container_id.txt ]; then
-  # Read the container ID from the file
-  read container_id < container_id.txt
-  rm container_id.txt
-
+if [ -n "$container_id" ]; then
   # Execute the psql command within the container
-  docker exec psql-db psql -U postgres -f /docker-entrypoint-initdb.d/create-db.sql
-  echo
-  echo
-  echo "Kinderneutron Database is Setup Successfully!"
+  docker exec psql-db psql -U postgres -f /docker-entrypoint-initdb.d/create-db.sql 2> /tmp/error.log
+  
+  if grep -q "already exists, skipping" /tmp/error.log; then
+    echo "Error: Relations already exist in the database."
+    exit 1
+  else
+    echo
+    echo "Kinderneutron Database is Setup Successfully!"
+    exit 0
+fi
 else
   echo "Error: No container named \"psql-db\" is found."
   exit 1
 fi
 
-exit 0
+
