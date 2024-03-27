@@ -26,7 +26,7 @@ This REPO Comes With PreRequirties Package.[Click Here](https://github.com/kinde
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed on your system.
 - Docker Compose configuration files for your project.
-### Installation Steps
+## Installation Steps
 
 1. Clone the repository:
    ```bash
@@ -39,6 +39,17 @@ This REPO Comes With PreRequirties Package.[Click Here](https://github.com/kinde
 (b) For Windows Users:
 ```
 autorun.bat
+```
+## Database Setup (⚠️First-TIme Only)
+<b>If You Are Setting Things Up For First Time in Local System, then Setup the DB. Just Execute the Script</b>
+<br> (a).For Linux Users:
+ ```bash
+   sh Patches/SQL/setup_fresh_db.sh
+```
+(b) For Windows Users:
+```
+cd Patches/SQL
+setup_fresh_db.bat
 ```
 
 ## Usage
