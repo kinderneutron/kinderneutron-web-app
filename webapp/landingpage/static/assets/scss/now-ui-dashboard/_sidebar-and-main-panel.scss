@@ -281,30 +281,26 @@
 }
 
 
-.main-panel{
-    position: relative;
-    float: right;
-    width: $sidebar-width;
-    // width: 100%;
-    background-color: $light-gray;
-    background-color: #ebecf1;
+.main-panel {
+  position: relative;
+  float: right;
+  width: $sidebar-width; /* Assuming $sidebar-width is defined elsewhere */
+  background-color: #ebecf1;
+  transition: 0.50s cubic-bezier(0.685, 0.0473, 0.346, 1);
+}
 
-    @include transition (0.50s, cubic-bezier(0.685, 0.0473, 0.346, 1));
+.main-panel > .content {
+  padding: 0 30px 30px;
+  min-height: calc(70vh - 123px); /* Adjust the percentage as needed */
+  margin-top: -30px;
+}
 
-    > .content{
-        padding: 0 30px 30px;
-        min-height: calc(100vh - 123px);
-        margin-top: -30px;
-    }
+.main-panel > .navbar {
+  margin-bottom: 0;
+}
 
-    > .navbar{
-        margin-bottom: 0;
-    }
-
-
-    .header{
-        margin-bottom: 50px;
-    }
+.header {
+  margin-bottom: 50px;
 }
 
 
