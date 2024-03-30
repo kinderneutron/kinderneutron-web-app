@@ -14,257 +14,101 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              <h4 class="card-title"> Simple Table</h4>
+                <h4 class="card-title">User Table</h4>
             </div>
             <div class="card-body">
-              <div class="table-responsive">
-                <table class="table">
-                  <thead class=" text-primary">
-                    <th>
-                      Name
-                    </th>
-                    <th>
-                      Country
-                    </th>
-                    <th>
-                      City
-                    </th>
-                    <th class="text-right">
-                      Salary
-                    </th>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        Dakota Rice
-                      </td>
-                      <td>
-                        Niger
-                      </td>
-                      <td>
-                        Oud-Turnhout
-                      </td>
-                      <td class="text-right">
-                        $36,738
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Minerva Hooper
-                      </td>
-                      <td>
-                        Curaçao
-                      </td>
-                      <td>
-                        Sinaai-Waas
-                      </td>
-                      <td class="text-right">
-                        $23,789
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Sage Rodriguez
-                      </td>
-                      <td>
-                        Netherlands
-                      </td>
-                      <td>
-                        Baileux
-                      </td>
-                      <td class="text-right">
-                        $56,142
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Philip Chaney
-                      </td>
-                      <td>
-                        Korea, South
-                      </td>
-                      <td>
-                        Overland Park
-                      </td>
-                      <td class="text-right">
-                        $38,735
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Doris Greene
-                      </td>
-                      <td>
-                        Malawi
-                      </td>
-                      <td>
-                        Feldkirchen in Kärnten
-                      </td>
-                      <td class="text-right">
-                        $63,542
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Mason Porter
-                      </td>
-                      <td>
-                        Chile
-                      </td>
-                      <td>
-                        Gloucester
-                      </td>
-                      <td class="text-right">
-                        $78,615
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Jon Porter
-                      </td>
-                      <td>
-                        Portugal
-                      </td>
-                      <td>
-                        Gloucester
-                      </td>
-                      <td class="text-right">
-                        $98,615
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Date Of Creation</th>
+                                <th>Date of Updation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in users %}
+                            <tr>
+                                <td>{{ user.id }}</td>
+                                <td>{{ user.username }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.created_at }}</td>
+                                <td>{{ user.updated_at }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-          </div>
+        </div>
         </div>
         <div class="col-md-12">
-          <div class="card card-plain">
+          <div class="card">
             <div class="card-header">
-              <h4 class="card-title"> Table on Plain Background</h4>
-              <p class="category"> Here is a subtitle for this table</p>
+                <h4 class="card-title">Device</h4>
             </div>
             <div class="card-body">
-              <div class="table-responsive">
-                <table class="table">
-                  <thead class=" text-primary">
-                    <th>
-                      Name
-                    </th>
-                    <th>
-                      Country
-                    </th>
-                    <th>
-                      City
-                    </th>
-                    <th class="text-right">
-                      Salary
-                    </th>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        Dakota Rice
-                      </td>
-                      <td>
-                        Niger
-                      </td>
-                      <td>
-                        Oud-Turnhout
-                      </td>
-                      <td class="text-right">
-                        $36,738
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Minerva Hooper
-                      </td>
-                      <td>
-                        Curaçao
-                      </td>
-                      <td>
-                        Sinaai-Waas
-                      </td>
-                      <td class="text-right">
-                        $23,789
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Sage Rodriguez
-                      </td>
-                      <td>
-                        Netherlands
-                      </td>
-                      <td>
-                        Baileux
-                      </td>
-                      <td class="text-right">
-                        $56,142
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Philip Chaney
-                      </td>
-                      <td>
-                        Korea, South
-                      </td>
-                      <td>
-                        Overland Park
-                      </td>
-                      <td class="text-right">
-                        $38,735
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Doris Greene
-                      </td>
-                      <td>
-                        Malawi
-                      </td>
-                      <td>
-                        Feldkirchen in Kärnten
-                      </td>
-                      <td class="text-right">
-                        $63,542
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Mason Porter
-                      </td>
-                      <td>
-                        Chile
-                      </td>
-                      <td>
-                        Gloucester
-                      </td>
-                      <td class="text-right">
-                        $78,615
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        Jon Porter
-                      </td>
-                      <td>
-                        Portugal
-                      </td>
-                      <td>
-                        Gloucester
-                      </td>
-                      <td class="text-right">
-                        $98,615
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>User Name</th>
+                                <th>Device Name</th>
+                                <th>Login Time</th>
+                                <th>Date of Updation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for device in devices %}
+                            <tr>
+                                <td>{{ device.id }}</td>
+                                <td>{{ device.username }}</td>
+                                <td>{{ device.device_name }}</td>
+                                <td>{{ device.login_time }}</td>
+                                <td>{{ device.updated_at }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-          </div>
+        </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Detection</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Result</th>
+                                <th>Date of Creation</th>
+                                <th>TImestamp</th>
+                                <th>Date of Updation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for detection in detections %}
+                            <tr>
+                                <td>{{ detection.id }}</td>
+                                <td>{{ detection.result }}</td>
+                                <td>{{ detection.created_at }}</td>
+                                <td>{{ detection.timestamp }}</td>
+                                <td>{{ detection.updated_at }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         </div>
       </div>
     </div>
