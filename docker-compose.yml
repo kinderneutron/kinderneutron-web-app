@@ -1,4 +1,3 @@
-  version: "1.0"
   services:
    web_service:
      build:
@@ -15,6 +14,9 @@
       - ./requirements.txt:/kinderneutron/requirements.txt
    
    psql-db:
+    build:
+       context: ./
+       dockerfile: ./Patches/SQL/Dockerfile
     image: 'postgres:14'
     container_name: psql-db
     environment:
@@ -25,7 +27,7 @@
       - '5446:5432'
     volumes:
       - db:/var/lib/postgresql/data
-
+      - ./Patches/SQL/create-db.sql:/docker-entrypoint-initdb.d/create-db.sql
   volumes:
     db:
       driver: local 
