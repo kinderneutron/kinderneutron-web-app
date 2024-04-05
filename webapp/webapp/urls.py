@@ -19,8 +19,9 @@ from django.urls import path,include,re_path
 from landingpage.home import views as home_views
 
 urlpatterns = [
-    path('login/', include('loginpage.urls')),
+    path('', include('loginpage.urls')),
     path("landingpage/", include("landingpage.home.urls")),
+    path("auth/", include("landingpage.authentication.urls")),
     re_path(r'^.*\.*', home_views.pages, name='pages'),
     path('admin/', admin.site.urls),
 ]

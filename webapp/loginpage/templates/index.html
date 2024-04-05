@@ -14,7 +14,7 @@
       <div class="box">
         <div class="inner-box">
           <div class="forms-wrap">
-            <form action="http://127.0.0.1:8000/home/#" autocomplete="off" class="sign-in-form">
+            <form action="http://localhost:8000/auth/" autocomplete="off" class="sign-in-form">
               <div class="logo">
                 <img src="{% static './img/icon.jpeg' %}" alt="easyclass"/>
                 <h2>KinderNeutron</h2>
@@ -29,6 +29,7 @@
                 <div class="input-wrap">
                   <input
                     type="text"
+                    name="username"
                     minlength="4"
                     class="input-field"
                     autocomplete="off"
@@ -40,6 +41,7 @@
                 <div class="input-wrap">
                   <input
                     type="password"
+                    name="password"
                     minlength="4"
                     class="input-field"
                     autocomplete="off"
@@ -47,18 +49,20 @@
                   />
                   <label>Password</label>
                 </div>
-
+                {% if request.GET.show_div %}
+                <div style="color: red;">Wrong Username or Password</div>
+                {% endif %}
                 <input type="submit" value="Sign In" class="sign-btn" />
 
                 <p class="text" style="font-size: 15px;">
                   New To Kinderneuton?
                  
                 </p>
-                <a href="/#" class="toggle"><button  id="regbtn">Register</button></a>
+                <a href="/#" class="toggle"><button  id="regbtn" onclick="event.preventDefault();">Register</button></a>
               </div>
             </form>
 
-            <form action="index.html" autocomplete="off" class="sign-up-form">
+            <form action="http://127.0.0.1:8000/login/" autocomplete="off" class="sign-up-form" id="signupForm">
               <div class="logo">
                 <img src="{% static './img/icon.jpeg' %}" alt="easyclass" />
                 <h2>KinderNeutron</h2>
@@ -74,6 +78,7 @@
                 <div class="input-wrap">
                   <input
                     type="text"
+                    name="regusername"
                     minlength="4"
                     class="input-field"
                     autocomplete="off"
@@ -85,6 +90,7 @@
                 <div class="input-wrap">
                   <input
                     type="email"
+                    name="email"
                     class="input-field"
                     autocomplete="off"
                     required
@@ -94,6 +100,7 @@
                 <div class="input-wrap">
                   <input
                     type="text"
+                    name="authtoken"
                     class="input-field"
                     autocomplete="off"
                     required
@@ -104,6 +111,7 @@
                 <div class="input-wrap">
                   <input
                     type="password"
+                    name="regpassword"
                     minlength="4"
                     class="input-field"
                     autocomplete="off"
@@ -112,7 +120,19 @@
                   <label>Password</label>
                 </div>
 
-                <input type="submit" value="Sign Up" class="sign-btn" />
+                <input type="submit" value="Sign Up" class="sign-btn" onclick="handleSignUp(event)" />
+                <script>
+                  function handleSignUp(event) {
+                      // Prevent the default form submission
+                      event.preventDefault();
+                      
+                      // Show the alert message
+                      alert('Registration Successful, Please Login Again');
+                      
+                      // Proceed with the form submission
+                      document.getElementById('signupForm').submit();
+                  }
+              </script>
 
                 <p class="text">
                   By signing up, I agree to the
