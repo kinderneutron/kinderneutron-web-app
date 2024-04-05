@@ -12,9 +12,7 @@
      volumes:
       - .:/root/kinderneutron
       - ./requirements.txt:/kinderneutron/requirements.txt
-     networks:
-      - kinderneutron_network:
-          external: true
+  
   #  psql-db:
   #   build:
   #      context: ./
