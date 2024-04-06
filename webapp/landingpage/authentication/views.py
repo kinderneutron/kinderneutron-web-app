@@ -7,27 +7,43 @@ Copyright (c) 2019 - present AppSeed.us
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm, SignUpForm
-
+import psycopg2
 
 def login_view(request):
-    form = LoginForm(request.POST or None)
-
-    msg = None
-
-    if request.method == "POST":
-
-        if form.is_valid():
-            username = form.cleaned_data.get("username")
-            password = form.cleaned_data.get("password")
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect("/")
-            else:
-                msg = 'Invalid credentials'
+    if request.method =="GET":
+        name = request.GET.get('username') if request.GET.get('username') else " "
+        password = request.GET.get('password') if request.GET.get('password') else " "
+        conn = psycopg2.connect(dbname="kinderneutron_db", user="postgres",  password="123456",  host="psql-db", port="5432")
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM public.user WHERE username = '"+name+"' AND password ='"+password+"'")
+        records = cursor.fetchall()
+        if not records:
+            return redirect('http://127.0.0.1:8000/login/?show_div=True')
         else:
-            msg = 'Error validating the form'
+            return redirect('http://127.0.0.1:8000/landingpage/')
 
+
+    # if request.method == "GET":
+        
+    #     if request.method =="GET":
+            
+    #         name = request.GET.get('username')
+    #         password = request.GET.get('password')
+    #         print(name+" "+password)
+
+    #     if form.is_valid():
+    #         username = form.cleaned_data.get("username")
+    #         password = form.cleaned_data.get("password")
+    #         print(username+" "+password)
+    #         user = authenticate(username=username, password=password)
+    #         if user is not None:
+    #             login(request, user)
+    #             return redirect("/")
+    #         else:
+    #             msg = 'Invalid credentials'
+    #     else:
+    #         msg = 'Error validating the form'
+    
     return render(request, "accounts/login.html", {"form": form, "msg": msg})
 
 

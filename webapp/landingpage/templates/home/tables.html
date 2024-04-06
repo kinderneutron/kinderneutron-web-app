@@ -27,6 +27,7 @@
                                 <th>Date Of Creation</th>
                                 <th>Date of Updation</th>
                             </tr>
+                            
                         </thead>
                         <tbody>
                             {% for user in users %}
@@ -95,7 +96,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for detection in detections %}
+                            {% for detection in detection_data %}
                             <tr>
                                 <td>{{ detection.id }}</td>
                                 <td>{{ detection.result }}</td>
